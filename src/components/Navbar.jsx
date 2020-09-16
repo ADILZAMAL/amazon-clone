@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import "../style/Navbar.css";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-
+import { useStateValue } from "./StateProvider";
 function Navbar() {
+  const [{ basket }] = useStateValue();
   return (
     <div className="navbar">
       <Link to="/">
@@ -40,7 +41,9 @@ function Navbar() {
         <Link to="/checkout" className="navbar__items__link">
           <div className="navbar__basket">
             <ShoppingBasketIcon />
-            <span className="navbar__item__line1 basket__count">0</span>
+            <span className="navbar__item__line1 basket__count">
+              {basket?.length}
+            </span>
           </div>
         </Link>
       </div>
