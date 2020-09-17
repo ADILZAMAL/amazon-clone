@@ -23,13 +23,13 @@ function Product({ id, title, price, image, rating }) {
           <small>$</small>
           <strong>{price}</strong>
         </p>
-        <div className="product__rating">
-          {Array(rating)
-            .fill()
-            .map((i) => {
-              return <p style={{ color: "yellow" }}>⭐</p>;
-            })}
-        </div>
+          <div className="product__rating">
+            {Array(rating)
+              .fill()
+              .map((i) => {
+                return <p style={{ color: "yellow" }}>⭐</p>;
+              })}
+          </div>
       </div>
 
       <img src={image} alt="" />
